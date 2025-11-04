@@ -1,28 +1,26 @@
-def add(a, b):
-    return a + b
+#Unit Test Example
+
+class GameFeature:
+    # Rule: score = 10 × length of the trimmed name
+    def compute_score(self, username: str) -> int:
+        if not isinstance(username, str):
+            raise TypeError("username must be a string")
+        name = username.strip()
+        return 0 if name == "" else len(name) * 10
 
 
+# ---- tests ----
 import unittest
 
-# The function we're testing
-def add(a, b):
-    return a + b
+class TestGameFeature(unittest.TestCase):
+    def test_basic_name(self):
+        g = GameFeature()
+        self.assertEqual(g.compute_score("alice"), 50)  # 5*10
 
-# Test case class
-class TestAddFunction(unittest.TestCase):
+    def test_spaces_and_empty(self):
+        g = GameFeature()
+        self.assertEqual(g.compute_score("  bob  "), 30)  # 3*10
+        self.assertEqual(g.compute_score("   "), 0)
 
-    def test_add_positive_numbers(self):
-        self.assertEqual(add(2, 3), 5)  # Test if 2 + 3 = 5
-
-    def test_add_negative_numbers(self):
-        self.assertEqual(add(-2, -3), -5)  # Test if -2 + -3 = -5
-
-    def test_add_mixed_numbers(self):
-        self.assertEqual(add(2, -3), -1)  # Test if 2 + -3 = -1
-
-    def test_add_zero(self):
-        self.assertEqual(add(0, 5), 5)  # Test if 0 + 5 = 5
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
-    
