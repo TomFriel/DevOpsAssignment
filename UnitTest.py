@@ -1,15 +1,7 @@
 
-class GameFeature:
-    # Rule: score = 10 × length of the trimmed name
-    def compute_score(self, username: str) -> int:
-        if not isinstance(username, str):
-            raise TypeError("username must be a string")
-        name = username.strip()
-        return 0 if name == "" else len(name) * 10
-
-
 # ---- tests ----
 import unittest
+from main import GameFeature
 
 class TestGameFeature(unittest.TestCase):
     def test_basic_name(self):
@@ -39,5 +31,3 @@ class TestGameFeature(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-# Dependebot change    
