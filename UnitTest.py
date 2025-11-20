@@ -31,3 +31,5 @@ class TestGameFeature(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    # Debug logging push
