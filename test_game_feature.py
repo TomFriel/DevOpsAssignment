@@ -1,7 +1,6 @@
-
-# ---- tests ----
+"""Unit tests for GameFeature."""
 import unittest
-from main import GameFeature
+from game_feature import GameFeature
 
 class TestGameFeature(unittest.TestCase):
     def test_basic_name(self):
@@ -28,8 +27,5 @@ class TestGameFeature(unittest.TestCase):
         with self.assertRaises(TypeError):
             g.compute_score(None)  # Non-string input    
                
-
 if __name__ == "__main__":
     unittest.main()
-
-    # Debug logging push
