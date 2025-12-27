@@ -1,7 +1,7 @@
 
 # ---- tests ----
 import unittest
-from main import GameFeature
+from game_feature import GameFeature
 
 class TestGameFeature(unittest.TestCase):
     def test_basic_name(self):
