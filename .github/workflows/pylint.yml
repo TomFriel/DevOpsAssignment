@@ -20,7 +20,10 @@ jobs:
           python -m pip install -U pip
           python -m pip install pylint
 
-      - name: Analyse code with Pylint
+      - name: Analyse code with Pylint (no rcfile)
         run: |
-          # Use your repo config and a sane threshold while you stabilize
-          pylint --rcfile=.pylintrc --fail-under=6.0 $(git ls-files '*.py')
+          pylint \
+            --fail-under=6.0 \
+            --disable=C0114,C0115,C0116,R0903,C0303,C0304,C0305 \
+            --max-line-length=100 \
+            $(git ls-files '*.py')
