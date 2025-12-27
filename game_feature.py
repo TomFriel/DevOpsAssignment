@@ -1,6 +1,6 @@
 """ Game feature module.
     Score usernames based on trimmed length.
-    Rule: score = 10 × length of the trimmed name
+    Rule: score = 10 multiplied by length of the trimmed name
 """
 
 class GameFeature:
