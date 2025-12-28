@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "devops-assignment-tf"
+version = "0.1.0"
+description = "Sample pipeline for unit tests + linting"
+readme = "README.md"
+requires-python = ">=3.8"
+authors = [{ name = "Tom Friel" }]
+
+[tool.setuptools]
+py-modules = ["game_feature", "my_lib"]
+
